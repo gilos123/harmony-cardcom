@@ -1,0 +1,30 @@
+{
+  "Eyal_test":{
+    "params": {
+        "grant_type": "password",
+        "client_id": "3MVG9GXbtnGKjXe4N0vE7Flg08XEZ2bVq9wVCH15DDzZ7TP2hJdl4J5OXDqtP_0RQuIAccDFEuXslcmxfEKkp",
+        "client_secret": "01236370F91439E7381BF2DFDA5FD9882DDA43E708BB4074F56DF0481E66565A",
+        "username": "yosi@epilepsy.org.il.partial",
+        "password": "Eyal8461dgcyOlDAgo9Rtzpb8sZfAiVTd"
+    }
+  },
+  "test": {
+    "params": {
+        "grant_type": "password",
+        "client_id": "3MVG9_ghEpKfggaPteIrZol.ptfJ6Ypa6x8QRlJvCzSD0F9pee0T2lloZvHuIrckapZVxnzoP2fmtmqGirk.g",
+        "client_secret": "4197D8B4EE214EBE89CB0A1EE5E84C201059E18E7F2B88925080FCEE8F2290CF",
+        "username": "gil@jarmony-it.com",
+        "password": "harmony8461uPBv6Eig6gmt0336kBqmGvL0q"
+    }
+  },
+  "Eyal": {
+    "params": {
+      "grant_type": "password",
+      "client_id": "3MVG9HxRZv05HarRLI47S2MxCzU6YYp7FSaSdBu1VLpuSWzdPb.xP3hSPUuG5ZBxL3Wrn0UqePNbLBaShtgD6",
+      "client_secret": "D6D5573D41D3C244C130A65CE68945965F1464C5055E7C4EB6D06B940432BC2F",
+      "username": "yosi@epilepsy.org.il",
+      "password": "Eyal3030cTe0dcjeq9GEWUoLNd25bx13f"
+    }
+  }
+
+}
