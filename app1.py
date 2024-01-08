@@ -6,7 +6,23 @@ from werkzeug.middleware.proxy_fix import ProxyFix
 import requests
 from datetime import date
 import json
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
+# Email settings
+to_email = "gil8461@gmail.com"
+from_email = "gil8461@gmail.com"  # Replace with your email address
+subject = "salesforce-cardcom"
+password = "google@8461"
+# Create the email message
+msg = MIMEMultipart()
+msg['From'] = from_email
+msg['To'] = to_email
+msg['Subject'] = subject
+
+smtp_server = 'smtp.gmail.com'
+port = 587
 
 def sf_api_call(action, parameters={}, method='get', data={}, access_token1='', instance_url1=''):
     """
@@ -78,6 +94,8 @@ def receive_get():
 @app.route('/<customer>', methods=["POST"])
 def receive_post_now(customer):
     params2 = ''
+
+
     with open('data.json', 'r') as f:
         file = json.load(f)
         params2 = file[customer]['params']
@@ -114,10 +132,21 @@ def receive_post_now(customer):
 
         opportunity_id = call.get('id')
         print(opportunity_id)
-
+        if r.status_code > 300:
+            body = r.text
+            msg.attach(MIMEText(body, 'plain'))
+            try:
+                server = smtplib.SMTP(smtp_server, port)
+                server.starttls()  # Secure the connection
+                server.login(from_email, password)  # Login to the server
+                server.sendmail(from_email, to_email, msg.as_string())  # Send the email
+                print("Email sent successfully!")
+            except Exception as e:
+                print(f"Error: {e}")
+            finally:
+                server.quit()
     # Send a response
         return jsonify({"message": "Data received", "data": data_cardcom})
-
 
 
 if __name__ == '__main__':
