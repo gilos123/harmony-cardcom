@@ -14,7 +14,7 @@ from email.mime.text import MIMEText
 to_email = "gil8461@gmail.com"
 from_email = "gil8461@gmail.com"  # Replace with your email address
 subject = "salesforce-cardcom"
-password = "google@8461"
+password = "rpiy peiv sbcc tnvv"
 # Create the email message
 msg = MIMEMultipart()
 msg['From'] = from_email
@@ -95,7 +95,7 @@ def receive_get():
 def receive_post_now(customer):
     params2 = ''
 
-
+    print("get")
     with open('data.json', 'r') as f:
         file = json.load(f)
         params2 = file[customer]['params']
@@ -150,4 +150,4 @@ def receive_post_now(customer):
 
 
 if __name__ == '__main__':
-    run_simple('0.0.0.0', 80, app, ssl_context=context)
+    run_simple('0.0.0.0', 443, app, ssl_context=context)

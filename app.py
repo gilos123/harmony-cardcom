@@ -132,7 +132,7 @@ def receive_post_now(customer):
 
         opportunity_id = call.get('id')
         print(opportunity_id)
-        if r.status_code > 100:
+        if r.status_code > 300:
             body = r.text
             msg.attach(MIMEText(body, 'plain'))
             try:
